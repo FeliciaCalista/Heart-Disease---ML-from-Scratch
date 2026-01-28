@@ -1,24 +1,24 @@
-# Heart Disease Prediction – Machine Learning From Scratch
+# Heart Disease Analysis and Prediction – Machine Learning From Scratch
 
-## Deskripsi Proyek
+## Project Description
 
-Proyek ini bertujuan untuk memprediksi risiko penyakit jantung menggunakan dataset **Heart Disease (`heart.csv`)** dengan pendekatan:
+This project aims to predict the risk of heart disease using the Heart Disease dataset (heart.csv) with the following approach:
 
 - Exploratory Data Analysis (EDA)
 - Machine Learning
-- Implementasi model **from scratch** (tanpa library ML siap pakai)
+- Implementing models from scratch (without pre-built ML libraries)
 
-Fokus utama proyek ini adalah **memahami arsitektur dan matematika di balik model ML**, bukan hanya menghasilkan prediksi.
+The main focus of this project is to understand the architecture and mathematics behind ML models, not just to generate predictions.
 
 ---
 
-## Tujuan Proyek
+## Project Goals
 
-1. Memahami karakteristik data kesehatan melalui EDA
-2. Mengimplementasikan algoritma ML dari nol
-3. Memahami:
-   - Cara model belajar
-   - Cara membuat prediksi
+1. Understand health data characteristics through EDA
+2. Implement ML algorithms from scratch
+3. Gain understanding of:
+   - How models learn
+   - How predictions are made
 
 ---
 
@@ -27,43 +27,43 @@ Fokus utama proyek ini adalah **memahami arsitektur dan matematika di balik mode
 - **Nama**: Heart Disease Dataset
 - **Kaggle**: `https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset`
 - **Target**:
-  - `0` → Tidak memiliki penyakit jantung
-  - `1` → Memiliki penyakit jantung
+  - `0` → No heart disease
+  - `1` → Has heart disease
 
-Setelah penghapusan data duplikat, dataset berisi **302 sampel**.
+After removing duplicate data, the dataset contains 302 samples.
 
 ---
 
 ## Exploratory Data Analysis (EDA)
 
-Tahapan EDA meliputi:
+The EDA steps include:
 
-### Pembersihan Data
-- Menghapus data duplikat
-- Mengecek missing values
-- Validasi tipe data
+### Data Cleaning
+- Remove duplicate data
+- Check for missing values
+- Validate data types
 
-### Analisis Distribusi Data
+### Data Distribution Analysis
 - Histogram:
-  - Melihat sebaran data
-  - Mengidentifikasi skewness
+  - Examine data distribution
+  - Identify skewness
 - Boxplot:
-  - Mendeteksi outlier
-  - Membandingkan distribusi antar kelas
+  - Detect outliers
+  - Compare distributions across classes
 
-### Analisis Hubungan Fitur
-- Crosstab (`pd.crosstab`)
-  - Digunakan untuk melihat hubungan antara fitur kategorikal dan target
+### Feature Relationship Analysis
+- Using Crosstab (`pd.crosstab`)
+  - Used to observe relationships between categorical features and the target
 
 ---
 
-## Preprocessing Data
+## Data Preprocessing
 
 - **Train-Test Split**
-  - Menggunakan `stratify=y` agar distribusi kelas tetap seimbang
+  - Using stratify=y to maintain class distribution
 - **Feature Scaling**
-  - Diperlukan untuk Logistic Regression
-  - Tidak wajib untuk Decision Tree & Random Forest
+  - Required for Logistic Regression
+  - Optional for Decision Tree & Random Forest
 
 ---
 
@@ -71,13 +71,13 @@ Tahapan EDA meliputi:
 
 ### Logistic Regression (From Scratch)
 
-**Tujuan:**
-- Model baseline
-- Mudah diinterpretasi
-- Menghasilkan probabilitas secara matematis
+**Purpose:**
+- Baseline model
+- Easy to interpret
+- Produces probabilities mathematically
 
-**Konsep yang diimplementasikan:**
-- Linear combination
+**Implemented Concepts:**
+- Linear combination of features
 - Sigmoid function
 - Binary Cross-Entropy Loss
 - Gradient Descent
@@ -86,27 +86,27 @@ Tahapan EDA meliputi:
 
 ### Decision Tree (From Scratch)
 
-**Konsep utama:**
-- Struktur node dan leaf
-- Pemilihan split menggunakan **Gini Impurity**
-- Rekursi
+**Core Concepts:**
+- Node and leaf structure
+- Split selection using Gini Impurity
+- Recursion
 - Early stopping
 
 ---
 
 ### Random Forest (From Scratch)
 
-**Prinsip kerja:**
-- Ensemble dari beberapa Decision Tree
-- Bootstrapping data
+**How it works:**
+- Ensemble of multiple Decision Trees
+- Data bootstrapping
 - Random feature selection
 - Voting dan probability averaging
 
 ---
 
-## Evaluasi Model
+## Model Evaluation
 
-### Metrik Evaluasi:
+### Evaluation Metrics:
 - ROC-AUC
 - Confusion Matrix
 - Accuracy, Precision, Recall
